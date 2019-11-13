@@ -38,5 +38,5 @@ class TerraformWrapper(object):
         
         
         #Sample usage:
-        #tf = tfg.Terraform_wrapper('/home/rgottiparthy/terraform/tfs')
+        #tf = tfg.Terraform_wrapper('/home/path/terraform/tfs')
         #res = tf.execute('validate')
