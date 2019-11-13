@@ -38,5 +38,6 @@ class TerraformWrapper(object):
         
         
         #Sample usage:
+        #import python_terraform_functions as tfg
         #tf = tfg.TerraformWrapper('/home/path/terraform/tfs')
         #res = tf.execute('validate')
