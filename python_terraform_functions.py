@@ -8,7 +8,7 @@ class TerraformWrapper(object):
 
         self.working_dir = working_dir
 
-    def execute(self, action):
+    def execute(self, action, **kwargs):
         ''' Execute action to run. Example init, validate, apply '''
 
         print('Running terraform')
@@ -27,10 +27,10 @@ class TerraformWrapper(object):
             return_code, stdout, stderr = tef.plan()
             return [return_code, stdout, stderr]
         elif action == "apply":
-            return_code, stdout, stderr = tef.apply("-auto-approve", capture_output=True)
+            return_code, stdout, stderr = tef.apply("-auto-approve", capture_output=True, **kwargs)
             return [return_code, stdout, stderr]
         elif action == "destroy":
-            return_code, stdout, stderr = tef.destroy("-auto-approve", capture_output=True)
+            return_code, stdout, stderr = tef.destroy("-auto-approve", capture_output=True, **kwargs)
             return [return_code, stdout, stderr]
         print ('Unsupported option was passed')
         print action
